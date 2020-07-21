@@ -16,7 +16,7 @@ const blogPostsRssXml = posts => {
         <description>
         <![CDATA[${post.excerpt}]]>
         </description>
-        <enclosure url="https://richardmcsorley.com/${post.coverImage}" type="image/jpeg"/>
+        <enclosure url="https://richardmcsorley.com${post.coverImage}" type="image/jpeg"/>
         <author>${post.author.name}</author>
     </item>`;
     });

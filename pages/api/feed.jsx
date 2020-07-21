@@ -1,4 +1,4 @@
-import { getAllPosts } from "../../lib/api";
+import allPosts from '../../public/posts.json'
 import moment from 'moment';
 
 const blogPostsRssXml = posts => {
@@ -42,15 +42,6 @@ const getRssXml = blogPosts => {
 };
 
 export default function Feed(req, res){
-       
-    const allPosts = getAllPosts([
-        "title",
-        "date",
-        "slug",
-        "author",
-        "coverImage",
-        "excerpt"
-    ]);
     res.setHeader("Content-Type", "text/xml");
         res.write(getRssXml(allPosts));
         res.end();
